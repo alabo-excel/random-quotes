@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(44, 39, 39);
+}
+#demo{
+    width: 100%;
+    text-align: center;
+}
+#demo div{
+    align-self: center;
+    background-color: white;
+    width: 80%;
+    margin-left: 150px;
+
+}
+h2{
+    color: white;
+}
+@media(max-width: 900px){
+    #demo div{
+        margin: 0px;
+        width: 100%;
+    }
+
+}

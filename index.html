@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <div id="demo">
+      <p></p>
+      <h6></h6>
+    </div>
+  </main>
+
+  <script>
+    fetch("https://type.fit/api/quotes")
+      .then(function (response) {
+        return response.json();
+      })
+
+      .then(function (data) {
+        console.log(data);
+        let demo ='<h2>QUOTES</h2>'
+        data.forEach(function (quotes){
+          demo +=`
+          <div>
+          <h3> ${quotes.text}</h3>
+          <p> ${quotes.author}</h3>
+          </div>
+          `;
+        });
+        document.getElementById('demo').innerHTML = demo;
+      });
+
+// function myFunction(quotes) {
+  
+//   document.getElementById("demo").innerHTML += quotes.text + "<br>" + quotes.author + "<br> <br>";
+//   document.getElementById("demo").style.backgroundColor = "white";
+
+// }
+
+  </script>
+</body>
+
+</html>
